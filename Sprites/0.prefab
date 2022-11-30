@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07f7aeb908cb6448832e5183f8fdd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPoint: {x: -0.5, y: 0.5, z: 0}
+  rotationPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &5044412342946319264
 GameObject:
   m_ObjectHideFlags: 0

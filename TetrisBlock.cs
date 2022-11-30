@@ -12,15 +12,7 @@ public class TetrisBlock : MonoBehaviour
     public static int width = 10;
     private static Transform[,] grid = new Transform[width, height];
     public static float speed = 0.8f;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    
 
     // Update is called once per frame
     void Update()
@@ -103,7 +95,7 @@ public class TetrisBlock : MonoBehaviour
     }
 
 
-    void CheckForLines()//assembled line check
+    void CheckForLines()
     {
         for (int i = height - 1; i >= 0; i--)
         {
@@ -128,7 +120,7 @@ public class TetrisBlock : MonoBehaviour
     }
 
 
-    void DeleteLine(int i)//deleting an assembled line
+    void DeleteLine(int i)
     {
         for (int j = 0; j < width; j++)
         {
@@ -141,7 +133,7 @@ public class TetrisBlock : MonoBehaviour
     }
 
 
-    void RowDown(int i)//descent down all the placed blocks
+    void RowDown(int i)
     {
         for (int k = i; k < height; k++)
         {
@@ -162,8 +154,9 @@ public class TetrisBlock : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int roundedX = Mathf.RoundToInt(children.transform.position.x);
-            int roundedY = Mathf.RoundToInt(children.transform.position.y);
+            var position = children.transform.position;
+            int roundedX = Mathf.RoundToInt(position.x);
+            int roundedY = Mathf.RoundToInt(position.y);
 
             grid[roundedX, roundedY] = children;
         }
@@ -174,8 +167,9 @@ public class TetrisBlock : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            int roundedX = Mathf.RoundToInt(children.transform.position.x);
-            int roundedY = Mathf.RoundToInt(children.transform.position.y);
+            var position = children.transform.position;
+            int roundedX = Mathf.RoundToInt(position.x);
+            int roundedY = Mathf.RoundToInt(position.y);
 
             if (roundedX < 0 || roundedX >= width || roundedY < 0 || roundedY >= height)
             {

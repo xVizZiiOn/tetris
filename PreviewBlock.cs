@@ -5,7 +5,7 @@ using UnityEngine;
 public class PreviewBlock : MonoBehaviour
 {
     public GameObject[] previewBlocks;
-    public GameObject temp = null;
+    private GameObject temp = null;
 
     public void ShowBlock(int i) //spawn preview block and delete past preview
     {

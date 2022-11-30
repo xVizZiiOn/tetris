@@ -25,15 +25,19 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
-        scoreText.text = "SCORE: " + score;
-        highscoreText.text = "HIGHSCORE: " + highscore;
-        speedText.text = "SPEED: " + speed;
+        // scoreText.text = "SCORE: " + score;
+        // highscoreText.text = "HIGHSCORE: " + highscore;
+        // speedText.text = "SPEED: " + speed;
+        scoreText.text = "" + score;
+        highscoreText.text = "" + highscore;
+        speedText.text = "" + speed;
     }
 
     public void AddScore()
     {
         score += 100;
-        scoreText.text = "SCORE: " + score.ToString();
+        // scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = "" + score.ToString();
         if (highscore < score)
         {
             PlayerPrefs.SetInt("highscore", score);
@@ -50,6 +54,7 @@ public class ScoreManager : MonoBehaviour
     public void SpeedUp()
     {
         speed += 1;
-        speedText.text = "SPEED: " + speed.ToString();
+        // speedText.text = "SPEED: " + speed.ToString();
+        speedText.text = "" + speed.ToString();
     }
 }
